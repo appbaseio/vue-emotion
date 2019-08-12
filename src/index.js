@@ -53,6 +53,7 @@ export default (tag, options) => {
       functional: true,
       inject: {
         theme: {
+					from: 'theme_reactivesearch',
           default: null
         }
       },
@@ -80,7 +81,7 @@ export default (tag, options) => {
         }
         if (staticClassName === undefined) {
           const ctx = {
-            mergedProps: assign({ theme: injections.theme_reactivesearch }, props)
+            mergedProps: assign({ theme: injections.theme }, props)
           }
           className += css.apply(ctx, styles.concat(classInterpolations))
         } else {
